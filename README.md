@@ -6,4 +6,4 @@
 
 `npm run build`
 
-For developement: `npm run dev-server`.
+For development: `npm run dev-server`.
