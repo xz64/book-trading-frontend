@@ -1,8 +1,11 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 const webpack = require('webpack');
+const path = require('path');
+const glob = require('glob');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
 
 module.exports = {
   module: {
@@ -22,5 +25,8 @@ module.exports = {
     new ExtractTextPlugin('styles.[contenthash].css'),
     new CleanWebpackPlugin(['dist']),
     new OptimizeCssAssetsPlugin(),
+    new PurifyCSSPlugin({
+      paths: glob.sync(path.join(__dirname, 'src/**/*.js')),
+    }),
   ],
 };
