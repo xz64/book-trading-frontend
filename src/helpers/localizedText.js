@@ -1,6 +1,6 @@
-import { defineText as tx } from 'domvm';
+import { defineView as vw, defineText as tx } from 'domvm';
 
-export default function localizedText(vm, model) {
+function localizedTextComponent(vm, model) {
   let translatedText = '';
 
   vm.hook({
@@ -16,3 +16,11 @@ export default function localizedText(vm, model) {
     return tx(translatedText);
   };
 }
+
+function localizedText(msgKey) {
+  return vw(localizedTextComponent, { msgKey });
+}
+
+/* eslint-disable import/prefer-default-export */
+export { localizedText };
+/* eslint-enable */

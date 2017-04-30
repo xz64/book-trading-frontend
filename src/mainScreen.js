@@ -1,6 +1,7 @@
 import { defineElement as el, defineView as vw } from 'domvm';
 import store from './store';
 import routes from './router/routes';
+import navbar from './navbar';
 import homeScreen from './home/homeScreen';
 import unknownScreen from './unknown/unknownScreen';
 
@@ -30,15 +31,20 @@ export default function (vm) {
   });
 
   return () => {
+    let routeScreen;
     switch (currentRoute) {
       case routes.HOME:
-        return el('div', [
-          vw(homeScreen),
-        ]);
+        routeScreen = homeScreen;
+        break;
       default:
-        return el('div', [
-          vw(unknownScreen),
-        ]);
+        routeScreen = unknownScreen;
     }
+
+    return el('div', [
+      vw(navbar),
+      el('div.pa2', [
+        vw(routeScreen),
+      ]),
+    ]);
   };
 }
