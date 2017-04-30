@@ -45,4 +45,9 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'index.template.ejs'),
     }),
   ],
+  resolve: {
+    alias: {
+      domvm: path.resolve(__dirname, 'node_modules/domvm/dist/nano/domvm.nano.js'),
+    },
+  },
 };
