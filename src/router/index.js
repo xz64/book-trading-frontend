@@ -9,6 +9,10 @@ const router = new Grapnel({
 
 router.get('/', () => store.dispatch(actions.home()));
 
+router.get('/login', () => store.dispatch(actions.login()));
+
+router.get('/register', () => store.dispatch(actions.register()));
+
 router.get('/*', (req, e) => {
   if (!e.parent()) {
     store.dispatch(actions.unknown());

@@ -1,5 +1,6 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -40,6 +41,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.RECAPTCHA_SITE_KEY': JSON.stringify(process.env.RECAPTCHA_SITE_KEY
+        || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'),
+    }),
     new HtmlWebpackPlugin({
       title: 'Book Trading',
       template: path.resolve(__dirname, 'src', 'index.template.ejs'),
@@ -47,7 +52,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      domvm: path.resolve(__dirname, 'node_modules/domvm/dist/nano/domvm.nano.js'),
+      domvm: path.resolve(__dirname, 'node_modules/domvm/dist/micro/domvm.micro.js'),
     },
   },
 };

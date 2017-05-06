@@ -3,6 +3,7 @@ import store from './store';
 import routes from './router/routes';
 import navbar from './navbar';
 import homeScreen from './home/homeScreen';
+import registerScreen from './register/registerScreen';
 import unknownScreen from './unknown/unknownScreen';
 
 export default function (vm) {
@@ -35,6 +36,9 @@ export default function (vm) {
     switch (currentRoute) {
       case routes.HOME:
         routeScreen = homeScreen;
+        break;
+      case routes.REGISTER:
+        routeScreen = registerScreen;
         break;
       default:
         routeScreen = unknownScreen;

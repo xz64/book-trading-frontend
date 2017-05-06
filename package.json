@@ -45,12 +45,14 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "alite": "^0.1.4",
     "domvm": "^2.1.4",
     "es6-promise": "^4.1.0",
     "grapnel": "^0.6.4",
     "keymirror": "^0.1.1",
     "l20n": "5.0.0",
     "redux": "^3.6.0",
+    "scriptjs": "^2.5.8",
     "tachyons-sass": "^4.7.1"
   },
   "private": true

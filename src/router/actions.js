@@ -15,7 +15,23 @@ function unknown() {
   };
 }
 
+function login() {
+  return {
+    type: actionTypes.ROUTE_CHANGE,
+    route: routes.LOGIN,
+  };
+}
+
+function register() {
+  return {
+    type: actionTypes.ROUTE_CHANGE,
+    route: routes.REGISTER,
+  };
+}
+
 export default {
   home,
   unknown,
+  login,
+  register,
 };

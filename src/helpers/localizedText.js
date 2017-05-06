@@ -18,7 +18,7 @@ function localizedTextComponent(vm, model) {
 }
 
 function localizedText(msgKey) {
-  return vw(localizedTextComponent, { msgKey });
+  return vw(localizedTextComponent, { msgKey }, false);
 }
 
 /* eslint-disable import/prefer-default-export */
