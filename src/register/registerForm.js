@@ -1,8 +1,8 @@
 import { defineElement as el, defineView as vw } from 'domvm';
-import alite from 'alite';
 
 import captcha from './captcha';
 import { localizedText as lt } from '../helpers/localizedText';
+import httpClient from '../helpers/httpClient';
 
 export default (vm) => {
   const formData = {
@@ -61,11 +61,7 @@ export default (vm) => {
       const postData = Object.assign({}, formData);
       delete postData.repeatpassword;
       submitting = true;
-      alite({
-        url: '/api/register',
-        method: 'POST',
-        data: postData,
-      })
+      httpClient.post('/api/register', postData)
       .then(() => {
         submitting = false;
         onSuccess();
