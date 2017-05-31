@@ -1,10 +1,12 @@
 import { combineReducers, createStore } from 'redux';
 
 import routerReducer from '../router/reducer';
+import userReducer from '../user/reducer';
 
 const createStoreArgs = [
   combineReducers({
     router: routerReducer,
+    user: userReducer,
   }),
   {},
 ];

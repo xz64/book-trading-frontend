@@ -2,16 +2,36 @@ import Grapnel from 'grapnel';
 
 import store from '../store';
 import actions from './actions';
+import httpClient from '../helpers/httpClient';
+import User from '../user';
 
 const router = new Grapnel({
   hashBang: true,
 });
 
-router.get('/', () => store.dispatch(actions.home()));
+function authenticatedOnly(req, event, next) {
+  httpClient.get('/api/session')
+  .then(({ valid }) => (valid ? User.getUserInfo : Promise.reject('unauthorized')))
+  .then(() => next())
+  .catch(() => router.path('/login'));
+}
 
-router.get('/login', () => store.dispatch(actions.login()));
+function unauthenticatedOnly(req, event, next) {
+  httpClient.get('/api/session')
+  .then(({ valid }) => {
+    if (!valid) {
+      next();
+    } else {
+      router.path('/');
+    }
+  });
+}
 
-router.get('/register', () => store.dispatch(actions.register()));
+router.get('/', authenticatedOnly, () => store.dispatch(actions.home()));
+
+router.get('/login', unauthenticatedOnly, () => store.dispatch(actions.login()));
+
+router.get('/register', unauthenticatedOnly, () => store.dispatch(actions.register()));
 
 router.get('/*', (req, e) => {
   if (!e.parent()) {
