@@ -4,6 +4,8 @@ import store from '../store';
 import User from '../user';
 
 export default (vm) => {
+  let previousRoute;
+  let currentRoute;
   let previousUser;
   let currentUser;
 
@@ -11,7 +13,14 @@ export default (vm) => {
     previousUser = currentUser;
     currentUser = store.getState().user && store.getState().user.username;
 
+    previousRoute = currentRoute;
+    currentRoute = store.getState().router.route;
+
     if (previousUser !== currentUser) {
+      vm.redraw();
+    }
+
+    if (previousRoute !== currentRoute) {
       vm.redraw();
     }
   }
@@ -31,7 +40,7 @@ export default (vm) => {
   return () => el('nav.cf.bg-black.white.ph2.f6.f5-m.f5-l', [
     el('span.dib.pa2.pa3-m.pa3-l', 'Book Trading'),
     el('span.dib.fr', [
-      !currentUser && el('a.dib.pa2.pa3-m.pa3-l.link.white.hover-moon-gray', { href: '/#!/login' },
+      !currentUser && (currentRoute !== 'LOGIN') && el('a.dib.pa2.pa3-m.pa3-l.link.white.hover-moon-gray', { href: '/#!/login' },
         [
           lt('login'),
         ],
