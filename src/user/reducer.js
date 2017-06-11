@@ -8,6 +8,8 @@ function userReducer(state = {}, { type, username, city, state: u_state }) {
         city,
         state: u_state,
       };
+    case actionTypes.LOGOUT:
+      return {};
     default:
       return state;
   }

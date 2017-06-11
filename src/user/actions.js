@@ -9,6 +9,13 @@ function updateUser(username, city, state) {
   };
 }
 
+function logout() {
+  return {
+    type: actionTypes.LOGOUT,
+  };
+}
+
 export default {
   updateUser,
+  logout,
 };
