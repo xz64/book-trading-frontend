@@ -9,6 +9,15 @@ function getUserInfo() {
   });
 }
 
+function login(username, password) {
+  return httpClient.post('/api/login', {
+    username,
+    password,
+  })
+  .then(getUserInfo);
+}
+
 export default {
+  login,
   getUserInfo,
 };

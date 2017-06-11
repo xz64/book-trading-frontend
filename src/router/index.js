@@ -11,7 +11,7 @@ const router = new Grapnel({
 
 function authenticatedOnly(req, event, next) {
   httpClient.get('/api/session')
-  .then(({ valid }) => (valid ? User.getUserInfo : Promise.reject('unauthorized')))
+  .then(({ valid }) => (valid ? User.getUserInfo() : Promise.reject('unauthorized')))
   .then(() => next())
   .catch(() => router.path('/login'));
 }

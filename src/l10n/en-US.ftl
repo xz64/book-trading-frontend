@@ -19,3 +19,4 @@ captcha-not-filled = Response required
 server_USERNAME_ALREADY_IN_USE = Username already used.
 server_INVALID_CAPTCHA_RESPONSE = You did not successfully prove that you are not a robot.
 registration-successful = Registration successful. Log in to continue.
+server_INVALID_USERNAME_PASSWORD = Invalid username or password.
