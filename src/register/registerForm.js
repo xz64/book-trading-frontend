@@ -27,6 +27,10 @@ export default (vm) => {
       formErrors.username = 'username-required';
     }
 
+    if (!formData.fullname) {
+      formErrors.fullname = 'full-name-required';
+    }
+
     if (!formData.city || formData.city.length > 30) {
       formErrors.city = 'city-required';
     }
@@ -96,6 +100,12 @@ export default (vm) => {
       oninput: onInput,
       maxlength: 30,
     }),
+    el('label.db.pv1', { for: 'fullname' }, [
+      lt('full-name'),
+      formErrors.fullname && el('br'),
+      formErrors.fullname && el('span.red', [lt(formErrors.fullname)]),
+    ]),
+    el('input#fullname.db.pv1.w-100.input-reset', { type: 'text', oninput: onInput, maxlength: 30 }),
     el('label.db.pv1', { for: 'city' }, [
       lt('city'),
       formErrors.city && el('br'),

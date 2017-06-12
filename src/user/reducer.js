@@ -1,10 +1,11 @@
 import actionTypes from './actionTypes';
 
-function userReducer(state = {}, { type, username, city, state: u_state }) {
+function userReducer(state = {}, { type, username, fullname, city, state: u_state }) {
   switch (type) {
     case actionTypes.USER_UPDATE:
       return {
         username,
+        fullname,
         city,
         state: u_state,
       };
