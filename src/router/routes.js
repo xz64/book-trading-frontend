@@ -5,4 +5,5 @@ export default keyMirror({
   LOGIN: null,
   UNKNOWN: null,
   REGISTER: null,
+  PROFILE: null,
 });

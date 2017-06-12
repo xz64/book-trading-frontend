@@ -24,3 +24,5 @@ server_INVALID_CAPTCHA_RESPONSE = You did not successfully prove that you are no
 registration-successful = Registration successful. Log in to continue.
 server_INVALID_USERNAME_PASSWORD = Invalid username or password.
 server_USER_LOCKED = This account has been locked for up to 60 minutes.
+update = Update
+profile-successfully-updated = Your profile has been successfully updated.

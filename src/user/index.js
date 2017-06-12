@@ -11,6 +11,15 @@ function getUserInfo() {
   });
 }
 
+function updateProfile(fullname, city, state) {
+  return httpClient.put('/api/profile', {
+    fullname,
+    city,
+    state,
+  })
+  .then(getUserInfo);
+}
+
 function login(username, password) {
   return httpClient.post('/api/login', {
     username,
@@ -31,4 +40,5 @@ export default {
   login,
   logout,
   getUserInfo,
+  updateProfile,
 };

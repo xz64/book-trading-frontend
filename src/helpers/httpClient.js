@@ -37,6 +37,15 @@ function get(url) {
   }));
 }
 
+function put(url, data) {
+  return updateCsrfToken()
+  .then(() => alite({
+    url,
+    method: 'PUT',
+    data,
+  }));
+}
+
 function post(url, data) {
   return updateCsrfToken()
   .then(() => alite({
@@ -49,6 +58,7 @@ function post(url, data) {
 export default {
   get,
   post,
+  put,
   setCsrfToken,
   updateCsrfToken,
 };

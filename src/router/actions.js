@@ -29,9 +29,17 @@ function register() {
   };
 }
 
+function profile() {
+  return {
+    type: actionTypes.ROUTE_CHANGE,
+    route: routes.PROFILE,
+  };
+}
+
 export default {
   home,
   unknown,
   login,
   register,
+  profile,
 };

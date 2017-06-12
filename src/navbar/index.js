@@ -45,7 +45,7 @@ export default (vm) => {
           lt('login'),
         ],
       ),
-      currentUser && el('a.dib.pa2.pa3-m.pa3-l.link.white.hover-moon-gray', [tx(currentUser)]),
+      currentUser && el('a.dib.pa2.pa3-m.pa3-l.link.white.hover-moon-gray', { href: '/#!/profile' }, [tx(currentUser)]),
       currentUser && el('span.dib.pa2.pointer.pa3-m.pa3-l.link.white.hover-moon-gray', { onclick: logout },
         [
           lt('logout'),

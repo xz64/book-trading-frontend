@@ -6,6 +6,7 @@ import homeScreen from './home/homeScreen';
 import registerScreen from './register/registerScreen';
 import loginScreen from './login/loginScreen';
 import unknownScreen from './unknown/unknownScreen';
+import profileScreen from './profile/profileScreen';
 
 export default function (vm) {
   let previousRoute;
@@ -43,6 +44,9 @@ export default function (vm) {
         break;
       case routes.REGISTER:
         routeScreen = registerScreen;
+        break;
+      case routes.PROFILE:
+        routeScreen = profileScreen;
         break;
       default:
         routeScreen = unknownScreen;

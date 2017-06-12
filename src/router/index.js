@@ -31,6 +31,8 @@ router.get('/', authenticatedOnly, () => store.dispatch(actions.home()));
 
 router.get('/login', unauthenticatedOnly, () => store.dispatch(actions.login()));
 
+router.get('/profile', authenticatedOnly, () => store.dispatch(actions.profile()));
+
 router.get('/register', unauthenticatedOnly, () => store.dispatch(actions.register()));
 
 router.get('/*', (req, e) => {
