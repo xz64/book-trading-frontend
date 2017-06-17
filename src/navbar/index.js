@@ -38,7 +38,7 @@ export default (vm) => {
   });
 
   return () => el('nav.cf.bg-black.white.ph2.f6.f5-m.f5-l', [
-    el('span.dib.pa2.pa3-m.pa3-l', 'Book Trading'),
+    el('a.dib.pa2.pa3-m.pa3-l.link.white.hover-moon-gray', { href: '/#!/' }, [lt('book-trading')]),
     el('span.dib.fr', [
       !currentUser && (currentRoute !== 'LOGIN') && el('a.dib.pa2.pa3-m.pa3-l.link.white.hover-moon-gray', { href: '/#!/login' },
         [
