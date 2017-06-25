@@ -82,10 +82,6 @@ export default (vm) => {
     ],
     showSuccess && el('.pv1', [
       lt('book-successfully-added'),
-      ' ',
-      el('a', { href: '/#!/' }, [
-        lt('return'),
-      ]),
     ]),
   ]);
 };

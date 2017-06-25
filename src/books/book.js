@@ -7,6 +7,11 @@ function addBook(title, author) {
   });
 }
 
+function getBooks() {
+  return httpClient.get('/api/books');
+}
+
 module.exports = {
   addBook,
+  getBooks,
 };
