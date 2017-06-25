@@ -1,8 +1,9 @@
 import actionTypes from './actionTypes';
 
-function updateUser(username, fullname, city, state) {
+function updateUser(id, username, fullname, city, state) {
   return {
     type: actionTypes.USER_UPDATE,
+    id,
     username,
     fullname,
     city,

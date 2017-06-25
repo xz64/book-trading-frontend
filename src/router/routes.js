@@ -6,4 +6,5 @@ export default keyMirror({
   UNKNOWN: null,
   REGISTER: null,
   PROFILE: null,
+  ADD_BOOK: null,
 });

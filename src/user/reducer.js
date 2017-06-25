@@ -1,6 +1,6 @@
 import actionTypes from './actionTypes';
 
-function userReducer(state = {}, { type, username, fullname, city, state: u_state }) {
+function userReducer(state = {}, { type, id, username, fullname, city, state: u_state }) {
   switch (type) {
     case actionTypes.USER_UPDATE:
       return {
@@ -8,6 +8,7 @@ function userReducer(state = {}, { type, username, fullname, city, state: u_stat
         fullname,
         city,
         state: u_state,
+        id,
       };
     case actionTypes.LOGOUT:
       return {};

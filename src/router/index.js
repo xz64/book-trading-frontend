@@ -33,6 +33,8 @@ router.get('/login', unauthenticatedOnly, () => store.dispatch(actions.login()))
 
 router.get('/profile', authenticatedOnly, () => store.dispatch(actions.profile()));
 
+router.get('/addBook', authenticatedOnly, () => store.dispatch(actions.addBook()));
+
 router.get('/register', unauthenticatedOnly, () => store.dispatch(actions.register()));
 
 router.get('/*', (req, e) => {

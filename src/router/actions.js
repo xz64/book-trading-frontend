@@ -36,10 +36,18 @@ function profile() {
   };
 }
 
+function addBook() {
+  return {
+    type: actionTypes.ROUTE_CHANGE,
+    route: routes.ADD_BOOK,
+  };
+}
+
 export default {
   home,
   unknown,
   login,
   register,
   profile,
+  addBook,
 };

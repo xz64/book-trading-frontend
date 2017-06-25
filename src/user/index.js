@@ -6,8 +6,8 @@ import router from '../router';
 function getUserInfo() {
   return httpClient.get('/api/user')
   .then((userInfo) => {
-    store.dispatch(actions.updateUser(userInfo.username, userInfo.fullname, userInfo.city,
-      userInfo.state));
+    store.dispatch(actions.updateUser(userInfo.id, userInfo.username, userInfo.fullname,
+      userInfo.city, userInfo.state));
   });
 }
 
