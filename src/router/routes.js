@@ -7,4 +7,6 @@ export default keyMirror({
   REGISTER: null,
   PROFILE: null,
   ADD_BOOK: null,
+  BOOKS: null,
+  NEW_TRADE: null,
 });

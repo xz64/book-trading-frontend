@@ -11,7 +11,12 @@ function getBooks() {
   return httpClient.get('/api/books');
 }
 
+function getMyBooks() {
+  return httpClient.get('/api/books/mine');
+}
+
 module.exports = {
   addBook,
   getBooks,
+  getMyBooks,
 };

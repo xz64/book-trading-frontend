@@ -11,7 +11,7 @@ export default () => (vm, book) => el('tr', [
     null,
     store.getState().user.id === book.owner._id // eslint-disable-line no-underscore-dangle
       ? null
-      : el('a', { href: '/#!/' }, [lt('action-request-trade')]),
+      : el('a', { href: `/#!/newTrade/${window.encodeURIComponent(book._id)}` }, [lt('action-request-trade')]),
   ]),
 ]);
 

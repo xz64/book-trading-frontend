@@ -43,6 +43,23 @@ function addBook() {
   };
 }
 
+function books() {
+  return {
+    type: actionTypes.ROUTE_CHANGE,
+    route: routes.BOOKS,
+  };
+}
+
+function newTrade(bookId) {
+  return {
+    type: actionTypes.ROUTE_CHANGE,
+    route: routes.NEW_TRADE,
+    params: {
+      bookId,
+    },
+  };
+}
+
 export default {
   home,
   unknown,
@@ -50,4 +67,6 @@ export default {
   register,
   profile,
   addBook,
+  books,
+  newTrade,
 };

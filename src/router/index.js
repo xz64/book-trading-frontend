@@ -35,7 +35,11 @@ router.get('/profile', authenticatedOnly, () => store.dispatch(actions.profile()
 
 router.get('/addBook', authenticatedOnly, () => store.dispatch(actions.addBook()));
 
+router.get('/books', authenticatedOnly, () => store.dispatch(actions.books()));
+
 router.get('/register', unauthenticatedOnly, () => store.dispatch(actions.register()));
+
+router.get('/newTrade/:requestedBook', authenticatedOnly, req => store.dispatch(actions.newTrade(req.params.requestedBook)));
 
 router.get('/*', (req, e) => {
   if (!e.parent()) {

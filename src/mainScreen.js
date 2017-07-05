@@ -8,6 +8,8 @@ import loginScreen from './login/loginScreen';
 import unknownScreen from './unknown/unknownScreen';
 import profileScreen from './profile/profileScreen';
 import addBookScreen from './books/addBookScreen';
+import booksScreen from './books/booksScreen';
+import newTradeScreen from './trade/newTradeScreen';
 
 export default function (vm) {
   let previousRoute;
@@ -51,6 +53,12 @@ export default function (vm) {
         break;
       case routes.ADD_BOOK:
         routeScreen = addBookScreen;
+        break;
+      case routes.BOOKS:
+        routeScreen = booksScreen;
+        break;
+      case routes.NEW_TRADE:
+        routeScreen = newTradeScreen;
         break;
       default:
         routeScreen = unknownScreen;
