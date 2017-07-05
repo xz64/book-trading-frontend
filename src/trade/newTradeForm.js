@@ -58,7 +58,7 @@ export default (vm) => {
       el('span', [
         lt('trade-created'),
         el('br'),
-        el('a', { href: '/#!/' }, [
+        el('a', { href: '/#!/books' }, [
           lt('return'),
         ]),
       ]),

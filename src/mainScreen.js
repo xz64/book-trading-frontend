@@ -10,6 +10,7 @@ import profileScreen from './profile/profileScreen';
 import addBookScreen from './books/addBookScreen';
 import booksScreen from './books/booksScreen';
 import newTradeScreen from './trade/newTradeScreen';
+import tradeScreen from './trade/tradeScreen';
 
 export default function (vm) {
   let previousRoute;
@@ -59,6 +60,9 @@ export default function (vm) {
         break;
       case routes.NEW_TRADE:
         routeScreen = newTradeScreen;
+        break;
+      case routes.TRADES:
+        routeScreen = tradeScreen;
         break;
       default:
         routeScreen = unknownScreen;

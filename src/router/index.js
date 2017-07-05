@@ -41,6 +41,8 @@ router.get('/register', unauthenticatedOnly, () => store.dispatch(actions.regist
 
 router.get('/newTrade/:requestedBook', authenticatedOnly, req => store.dispatch(actions.newTrade(req.params.requestedBook)));
 
+router.get('/trades', authenticatedOnly, () => store.dispatch(actions.trades()));
+
 router.get('/*', (req, e) => {
   if (!e.parent()) {
     store.dispatch(actions.unknown());

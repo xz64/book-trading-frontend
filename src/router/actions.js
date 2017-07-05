@@ -60,6 +60,13 @@ function newTrade(bookId) {
   };
 }
 
+function trades() {
+  return {
+    type: actionTypes.ROUTE_CHANGE,
+    route: routes.TRADES,
+  };
+}
+
 export default {
   home,
   unknown,
@@ -69,4 +76,5 @@ export default {
   addBook,
   books,
   newTrade,
+  trades,
 };

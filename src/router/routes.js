@@ -9,4 +9,5 @@ export default keyMirror({
   ADD_BOOK: null,
   BOOKS: null,
   NEW_TRADE: null,
+  TRADES: null,
 });
